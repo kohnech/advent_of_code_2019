@@ -58,15 +58,13 @@ intersection = wire1.intersection(wire2)
 
 distances=[]
 
+# Solution
 if not intersection.is_empty:
-    print("intersection: {}".format(intersection))
     for point in intersection:
         if point == Point(0,0) or point.geom_type != 'Point':
-            # print("Not a point or 0,0")
             pass
         else:
             l = get_taxicab_metric(Point(0,0), point)
-            # print("length: {}".format(l))
             distances.append(l)
 
 print("Result: {}".format(min(distances)))
